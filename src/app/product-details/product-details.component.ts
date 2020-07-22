@@ -24,6 +24,14 @@ export class ProductDetailsComponent implements OnInit {
       this.productCode = params.get("id")
     });
 
+    this.service.getSpecProduct(this.productCode).subscribe((p) => {
+      this.product = p;
+    })
+
+  }
+
+  onRatingClicked(message: string): void {
+    alert(message);
   }
 
 

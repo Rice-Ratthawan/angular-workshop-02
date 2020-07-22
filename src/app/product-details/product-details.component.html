@@ -1,17 +1,9 @@
-<p>Can not show value from array</p>
-
-<h3>Product Details </h3>
-<!--
-<div *ngFor="let location of locationsFiltered">
-    <h1>{{location.name}}</h1>
-    <h2>{{location.category}}</h2>
-</div>
--->
-
-<ul>
-    <li>Product Image: </li>
-    <li>Product Code: </li>
-    <li>Product Name: </li>
-    <li>Product Price: </li>
-    <li>Product Available: </li>
-</ul>
+<h3>Product Details {{ product.name | uppercase | productName:" " }}</h3>
+<br />
+<p><b>Product Image:</b> {{ product.imageUrl }}</p>
+<p><b>Product Code:</b> {{ product.code }}</p>
+<p><b>Product Price:</b> {{ product.price | number:'0.2-5' }}</p>
+<p><b>Product Available:</b> {{ product.available }}</p>
+<p><b>Product Rating</b>
+    <app-rating [rating]="product.rating" (ratingClicked)="onRatingClicked($event)"></app-rating>
+</p>
