@@ -33,7 +33,7 @@
         <tbody *ngIf="products.length > 0">
           <tr *ngFor="let product of products | productFilter: filterData">
             <th>{{ product.imageUrl }}</th>
-            <th>{{ product.code }}</th>
+            <th><a routerLink="/detail/{{product.code}}">{{ product.code }}</a></th>
             <th>{{ product.name | uppercase | productName:" " }}</th>
             <th>{{ product.price | number:'0.2-5' }}</th>
             <th>{{ product.available }}</th>

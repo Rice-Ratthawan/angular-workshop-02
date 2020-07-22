@@ -36,6 +36,9 @@ export class ProductService {
     const p3 = new Product('ccc', '03', 'Name 03', 60.00, true, 4.3);
     return of([p1, p2, p3])
 
+  }
+
+  getSpecProduct() {
 
   }
 

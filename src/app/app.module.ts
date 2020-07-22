@@ -10,6 +10,7 @@ import { ProductFilterPipe } from './product-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RatingComponent } from './rating/rating.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RatingComponent } from './rating/rating.component';
     ProductListComponent,
     ProductNamePipe,
     ProductFilterPipe,
-    RatingComponent
+    RatingComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
