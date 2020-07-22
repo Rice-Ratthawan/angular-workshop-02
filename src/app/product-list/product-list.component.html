@@ -37,7 +37,9 @@
             <th>{{ product.name | uppercase | productName:" " }}</th>
             <th>{{ product.price | number:'0.2-5' }}</th>
             <th>{{ product.available }}</th>
-            <th>{{ product.rating | number:'0.2-5' }}</th>
+            <th>
+              <app-rating [rating]="product.rating" (ratingClicked)="onRatingClicked($event)"></app-rating>
+            </th>
           </tr>
         </tbody>
         <tbody *ngIf="products.length == 0">
