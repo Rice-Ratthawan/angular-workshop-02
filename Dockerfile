@@ -1,6 +1,8 @@
-FROM node:12.18.2-stretch
+FROM node:alpine AS my-app-build
 WORKDIR /app
 COPY . .
-RUN npm install
-EXPOSE 4000
-CMD ["npm","start"]
+RUN npm install && npm run build
+
+FROM nginx:alpine
+COPY --from=my-app-build /app/dist/product-app /usr/share/nginx/html
+EXPOSE 80
